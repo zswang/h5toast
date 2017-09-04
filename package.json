@@ -1,0 +1,50 @@
+{
+  "name": "h5toast",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "istanbul cover --hook-run-in-context node_modules/mocha/bin/_mocha -- -R spec",
+    "example": "gulp example",
+    "mocha": "mocha",
+    "dist": "gulp dist"
+  },
+  "authors": [
+    {
+      "name": "Fadi Khadra",
+      "email": "fdkhadra@gmail.com",
+      "url": "https://fkhadra.github.io"
+    },
+    {
+      "name": "zswang",
+      "url": "http://weibo.com/zswang"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zswang/h5toast.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.3",
+    "clean-css": "^4.1.8",
+    "gulp": "^3.9.1",
+    "gulp-examplejs": "0.0.9",
+    "gulp-jdists": "^2.0.17",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-typescript": "^3.2.2",
+    "istanbul": "^0.3.17",
+    "jsdom": "^9.12.0",
+    "less": "^2.7.2",
+    "merge2": "^1.1.0",
+    "mocha": "^2.0.1",
+    "should": "^4.1.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {},
+  "files": [
+    "lib"
+  ]
+}

@@ -1,0 +1,20 @@
+@import 'animations/bounce';
+
+.h5toast-animated {
+  animation-duration: @animation-duration;
+  animation-fill-mode: both;
+}
+
+.toast-enter {
+  &--top-left, &--bottom-left{&:extend(.h5toast-bounceInLeft);}
+  &--top-right, &--bottom-right{&:extend(.h5toast-bounceInRight);}
+  &--top-center {&:extend(.h5toast-bounceInDown);}
+  &--bottom-center {&:extend(.h5toast-bounceInUp);}
+}
+
+.toast-exit {
+  &--top-left, &--bottom-left{&:extend(.h5toast-bounceOutLeft);}
+  &--top-right, &--bottom-right{&:extend(.h5toast-bounceOutRight);}
+  &--top-center {&:extend(.h5toast-bounceOutUp);}
+  &--bottom-center {&:extend(.h5toast-bounceOutDown);}
+}
