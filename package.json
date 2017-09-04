@@ -1,14 +1,22 @@
 {
   "name": "h5toast",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.0.6",
+  "description": "Simple toast notifications of Mobile Web",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "keywords": [
+    "toast",
+    "notification",
+    "alert"
+  ],
   "scripts": {
+    "_update_version": "node version.js",
+    "_dist": "gulp dist",
+    "lint": "jshint src/*.js",
     "test": "istanbul cover --hook-run-in-context node_modules/mocha/bin/_mocha -- -R spec",
     "example": "gulp example",
     "mocha": "mocha",
-    "dist": "gulp dist"
+    "dist": "npm run _update_version && npm run example && npm run _dist && npm run test"
   },
   "authors": [
     {

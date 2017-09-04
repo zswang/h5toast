@@ -1,4 +1,22 @@
 /**
+ * @file h5toast
+ 
+ * @url https://github.com/zswang/h5toast.git
+ 
+ * Simple toast notifications of Mobile Web
+ * @author
+     
+ *   Fadi Khadra (https://fkhadra.github.io)
+     
+ *   zswang (http://weibo.com/zswang)
+     
+ * @version 0.0.6
+     
+ * @date 2017-09-04
+ * @license MIT
+ */
+
+/**
  * @see https://github.com/fkhadra/react-toastify
  */
 export type ToastType = 'default' | 'info' | 'error' | 'success' | 'warn'

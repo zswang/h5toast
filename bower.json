@@ -1,0 +1,26 @@
+{
+  "name": "h5toast",
+  "version": "0.0.6",
+  "homepage": "https://github.com/zswang/h5toast",
+  "description": "Simple toast notifications of Mobile Web",
+  "main": "lib/index.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "src",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "toast",
+    "notification",
+    "alert"
+  ]
+}
