@@ -26,7 +26,7 @@ gulp.task('build', function () {
     tsResult.dts.pipe(gulp.dest('./lib')),
     tsResult.js
       .pipe(
-        replace(/(\(function\s*\()(factory\)\s*\{)/, '$1root, $2')
+        replace(/(\(function\s*\()(factory\)\s*\{)/, '$1root, $2\n    /* istanbul ignore next */')
       )
       .pipe(
         replace(/(define\(\["require",\s*"exports"\],\s*factory\);\s*\})/, '$1 else { factory(null, root["' + packageInfo.name + '"] = {}); }')
