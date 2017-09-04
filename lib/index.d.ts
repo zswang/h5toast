@@ -17,7 +17,11 @@ export declare class Toast {
             items: HTMLDivElement[];
         };
     };
-    constructor();
+    /**
+     * 默认配置
+     */
+    options: ToastOptions;
+    constructor(options: ToastOptions);
     remove(item: HTMLDivElement, position?: ToastPosition | string): void;
     /**
      * 显示消息

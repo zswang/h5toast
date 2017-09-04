@@ -40,9 +40,19 @@ export class Toast {
       items: HTMLDivElement[],
     }
   }
-  constructor() {
+  /**
+   * 默认配置
+   */
+  options: ToastOptions
+  constructor(options: ToastOptions) {
     this.parent = document.createElement('div')
     let style = document.createElement('style')
+    this.options = options || {}
+    this.options.position = this.options.position === undefined ? 'top-right' : this.options.position
+    this.options.progress = this.options.progress === undefined ? true : this.options.progress
+    this.options.timeout = this.options.timeout === undefined ? 5000 : this.options.timeout
+    this.options.encode = this.options.encode === undefined ? true : this.options.encode
+
     /*<remove>*/
     let text = document.createTextNode('')
     /*</remove>*/
@@ -135,10 +145,10 @@ export class Toast {
       options = type
       type = 'default'
     }
-    let position = options.position || 'top-right'
-    let progress = options.progress === undefined ? true : options.progress
-    let timeout = options.timeout === undefined ? 5000 : options.timeout
-    let encode = options.encode === undefined ? true : options.encode
+    let position = options.position || this.options.position
+    let progress = options.progress === undefined ? this.options.progress : options.progress
+    let timeout = options.timeout === undefined ? this.options.timeout : options.timeout
+    let encode = options.encode === undefined ? this.options.encode : options.encode
     if (encode) {
       msg = encodeHTML(msg)
     }
