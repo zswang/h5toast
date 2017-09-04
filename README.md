@@ -3,12 +3,14 @@
 ## Quick Start
 
 ```js
-h5toast.info('info')
+var toast = new h5toast.Toast({
+  position: 'bottom-right',
+})
 
-h5toast.error('error', {
-  timeout: 5000,
-  position: 'top-left',
-  progress: true,
+toast.success('success')
+toast.error('error')
+toast.show('default', {
+  timeout: 100000
 })
 ```
 

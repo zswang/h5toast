@@ -3,7 +3,9 @@
 <body>
   <script src="../lib/index.js"></script>
   <script>
-    var toast = new h5toast.Toast();
+    var toast = new h5toast.Toast({
+      position: 'bottom-right',
+    })
     toast.success('成功')
     toast.error('错误')
     toast.show('默认', {
