@@ -361,7 +361,7 @@ describe("src/index.ts", function () {
     examplejs_printLines = [];
     var toast = new h5toast.Toast()
     var div = toast.warn('hello');
-    examplejs_print(div.classList.contains('h5toast-content--warn'));
+    examplejs_print(div.classList.contains('h5toast-content--warning'));
     assert.equal(examplejs_printLines.join("\n"), "true"); examplejs_printLines = [];
   });
           

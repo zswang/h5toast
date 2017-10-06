@@ -23,7 +23,7 @@
 /**
  * @see https://github.com/fkhadra/react-toastify
  */
-export type ToastType = 'default' | 'info' | 'error' | 'success' | 'warn'
+export type ToastType = 'default' | 'info' | 'error' | 'success' | 'warning'
 export type ToastPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 
 const htmlEncodeDict: { [key: string]: string } = {
@@ -362,12 +362,12 @@ export class Toast {
     ```js
     var toast = new h5toast.Toast()
     var div = toast.warn('hello');
-    console.log(div.classList.contains('h5toast-content--warn'));
+    console.log(div.classList.contains('h5toast-content--warning'));
     // > true
     ```
    */
   warn(msg: string, options?: ToastOptions): HTMLDivElement {
-    return this.show(msg, 'warn', options)
+    return this.show(msg, 'warning', options)
   }
 
   /**
