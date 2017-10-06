@@ -10,7 +10,7 @@ const merge2 = require('merge2')
 const replace = require('gulp-replace')
 const examplejs = require('gulp-examplejs')
 const rename = require('gulp-rename')
-const packageInfo = require('./package')
+const pkg = require('./package')
 
 gulp.task('build', function () {
   var tsResult = gulp.src('./src/*.ts')
@@ -29,7 +29,7 @@ gulp.task('build', function () {
         replace(/(\(function\s*\()(factory\)\s*\{)/, '$1root, $2\n    /* istanbul ignore next */')
       )
       .pipe(
-        replace(/(define\(\["require",\s*"exports"\],\s*factory\);\s*\})/, '$1 else { factory(null, root["' + packageInfo.name + '"] = {}); }')
+        replace(/(define\(\["require",\s*"exports"\],\s*factory\);\s*\})/, `$1 else { factory(null, root["${pkg.name}"] = {}); }`)
       )
       .pipe(
         replace(/(\s*\}\s*\)\s*\()(function\s*\(require,\s*exports\)\s*\{)/, '$1this, $2')
@@ -44,7 +44,7 @@ gulp.task('example', function () {
   ])
     .pipe(examplejs({
       header: `
-global.h5toast = require('../')
+global.${pkg.name} = require('../')
       `
     }))
     .pipe(rename({
